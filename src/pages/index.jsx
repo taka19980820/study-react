@@ -3,17 +3,25 @@ import { Footer } from '../components/Footer'
 import { Main } from '../components/Main'
 import { Header } from '../components/Header'
 import Head from 'next/head'
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 
 
 
 export default function Home() {
 
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href)
-    e.preventDefault();
-    alert(1);
-  }, []);
+  // const handleClick = useCallback((e) => {
+  //   console.log(e.target.href)
+  //   e.preventDefault();
+  //   alert(1);
+  // }, []);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = "lightblue"
+
+    return () => {
+      document.body.style.backgroundColor = ""
+    }
+  }, [])
 
   return (
     <div className={classes.container}>
@@ -21,11 +29,11 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <a 
+      {/* <a 
         href="/about"
         onClick={handleClick}>
         ボタン
-      </a>
+      </a> */}
       <Main title="index" />
       <Footer />
     </div>
