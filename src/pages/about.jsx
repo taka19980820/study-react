@@ -5,7 +5,7 @@ import { Header } from '../components/Header'
 import Head from 'next/head'
 
 
-export default function About({count, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd}) {
+export default function About({count, doubleCount ,isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd}) {
   
 
   return (
@@ -14,7 +14,7 @@ export default function About({count, isShow, handleClick, handleDisplay, text, 
         <title>About Page</title>
       </Head>
       <Header />
-      {isShow ? <h1>{count}</h1> : null}
+      {isShow ? <h1>{doubleCount}</h1> : null}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>非表示</button>
 
